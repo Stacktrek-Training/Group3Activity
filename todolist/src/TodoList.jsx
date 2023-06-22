@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-
-
-// Done na kami apat maam haahah
+import React, { useState } from 'react';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -17,7 +14,7 @@ function TodoList() {
       return;
     }
     setTodos([...todos, inputValue]);
-    setInputValue("");
+    setInputValue('');
   };
 
   const handleTodoDelete = (index) => {
@@ -36,7 +33,7 @@ function TodoList() {
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>
-            {todo}{" "}
+            {todo}{' '}
             <button onClick={() => handleTodoDelete(index)}>Delete</button>
           </li>
         ))}
